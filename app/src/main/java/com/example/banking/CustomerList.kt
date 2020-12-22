@@ -156,30 +156,28 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
                 run {
 
                     val amt: Int = etamt.text.toString().toInt()
-                    if (amt != null) {
-                        if (amt >= balance1!!) {
-                            Toast.makeText(
-                                applicationContext,
-                                "Please enter \n Valid integer amount",
-                                Toast.LENGTH_LONG
-                            ).show()
-                            customDialog.dismiss()
-                            updateLayout()
-                        } else
-                            transactionsafe = true
+                    if (amt >= balance1!!) {
+                        Toast.makeText(
+                            applicationContext,
+                            "Please enter \n Valid integer amount",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        customDialog.dismiss()
+                        updateLayout()
+                    } else
+                        transactionsafe = true
 
-                        if (transactionsafe) {
-                            transferMoney(firstperson, secondperson, amt)
-                            firstperson = -1
-                            secondperson = -1
-                            transactionsafe = false
-                            updateLayout()
-                            Toast.makeText(
-                                applicationContext,
-                                "Transaction Succcessful!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
+                    if (transactionsafe) {
+                        transferMoney(firstperson, secondperson, amt)
+                        firstperson = -1
+                        secondperson = -1
+                        transactionsafe = false
+                        updateLayout()
+                        Toast.makeText(
+                            applicationContext,
+                            "Transaction Succcessful!",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
             })
