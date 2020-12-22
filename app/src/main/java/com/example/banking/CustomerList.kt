@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_customer_list.*
 import kotlinx.android.synthetic.main.customer_info.view.*
 import kotlinx.android.synthetic.main.transaction_info.view.*
