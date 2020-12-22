@@ -6,9 +6,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 
-class MyDBHelper(context: Context): SQLiteOpenHelper(context,"CUSTOMERS_DATA",null,1) {
+class MyDBHelper(context: Context) : SQLiteOpenHelper(context, "CUSTOMERS_DATA", null, 1) {
 
-    companion object{
+    companion object {
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "CUSTOMERS_DATA"
         private const val TABLE_NAME = "CUSTOMERS"
@@ -47,7 +47,7 @@ class MyDBHelper(context: Context): SQLiteOpenHelper(context,"CUSTOMERS_DATA",nu
 
     }
 
-    override fun onUpgrade(db:SQLiteDatabase, oldVersion: Int,newVersion: Int) {
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
     }
@@ -58,12 +58,11 @@ class MyDBHelper(context: Context): SQLiteOpenHelper(context,"CUSTOMERS_DATA",nu
 
         val db: SQLiteDatabase = this.writableDatabase
         //val success = db.update(TABLE_CONTACTS, contentValues,"id="+emp.userId,null)
-        val success = db.update(
+        db.update(
             TABLE_NAME,
             values,
-             " cid = " + c.getId(),
-            null)
-
+            " cid = " + c.getId(),
+            null
+        )
     }
-
 }
