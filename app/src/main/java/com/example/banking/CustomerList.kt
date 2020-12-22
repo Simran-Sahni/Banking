@@ -34,7 +34,7 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
         helper = MyDBHelper(applicationContext)
         db = helper.readableDatabase
 
-        recyclerView.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
+        recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = MyAdapter(this)
         recyclerView.adapter = adapter
         fetchData()
