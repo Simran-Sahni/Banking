@@ -43,8 +43,8 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
     private fun fetchData() {
         rs = db.rawQuery("SELECT * FROM CUSTOMERS", null)
 
-        list = ArrayList<Customer>()
-        mapp = HashMap<Int, Customer>()
+        list = ArrayList()
+        mapp = HashMap()
         while (rs.moveToNext()) {
 
             val id = rs.getString(0).toInt()
