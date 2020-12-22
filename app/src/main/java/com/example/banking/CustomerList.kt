@@ -113,11 +113,11 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
     fun updateLayout() {
         if (firstperson != -1 || secondperson != -1) {
             if (firstperson != -1) {
-                person1.setText(mapp.get(firstperson)?.getfirstName())
+                person1.setText(mapp[firstperson]?.getfirstName())
 
             }
             if (secondperson != -1) {
-                person2.setText(mapp.get(secondperson)?.getfirstName())
+                person2.setText(mapp[secondperson]?.getfirstName())
 
             }
 
@@ -133,10 +133,10 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
             var balance2: Int? = 0
             var p1name: String? = " "
             var p2name: String? = " "
-            balance2 = mapp.get(secondperson)?.getBalance()
-            balance1 = mapp.get(firstperson)?.getBalance()
-            p1name = mapp.get(firstperson)?.getfirstName()
-            p2name = mapp.get(secondperson)?.getfirstName()
+            balance2 = mapp[secondperson]?.getBalance()
+            balance1 = mapp[firstperson]?.getBalance()
+            p1name = mapp[firstperson]?.getfirstName()
+            p2name = mapp[secondperson]?.getfirstName()
 
             subView.fromfield.text = p1name
             subView.to.text = p2name
