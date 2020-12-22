@@ -48,7 +48,7 @@ class MyDBHelper(context: Context): SQLiteOpenHelper(context,"CUSTOMERS_DATA",nu
     }
 
     override fun onUpgrade(db:SQLiteDatabase, oldVersion: Int,newVersion: Int) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME)
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
     }
 
