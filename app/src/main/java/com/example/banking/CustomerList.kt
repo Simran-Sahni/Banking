@@ -113,17 +113,17 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
     fun updateLayout() {
         if (firstperson != -1 || secondperson != -1) {
             if (firstperson != -1) {
-                person1.setText(mapp[firstperson]?.getfirstName())
+                person1.text = mapp[firstperson]?.getfirstName()
 
             }
             if (secondperson != -1) {
-                person2.setText(mapp[secondperson]?.getfirstName())
+                person2.text = mapp[secondperson]?.getfirstName()
 
             }
 
         } else {
-            person1.setText(" ")
-            person2.setText(" ")
+            person1.text = " "
+            person2.text = " "
         }
         if (firstperson != -1 && secondperson != -1) {
             val inflater: LayoutInflater = LayoutInflater.from(this)
@@ -186,8 +186,8 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
                 //Toast.makeText(applicationContext,"clicked No",Toast.LENGTH_LONG).show()
                 firstperson = -1
                 secondperson = -1
-                person1.setText(" ")
-                person2.setText(" ")
+                person1.text = " "
+                person2.text = " "
             }
 
             builder.show()
