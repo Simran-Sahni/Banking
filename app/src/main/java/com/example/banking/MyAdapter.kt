@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class MyAdapter(private val listener: CustomerItemClicked ) : RecyclerView.Adapter<CustomerViewHolder>() {
-    val items: ArrayList<Customer> = ArrayList()
+    private val items: ArrayList<Customer> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomerViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_customer, parent, false)
         val viewHolder = CustomerViewHolder(view)
@@ -42,7 +42,6 @@ class MyAdapter(private val listener: CustomerItemClicked ) : RecyclerView.Adapt
 class CustomerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.name)
         val balance: TextView = itemView.findViewById(R.id.balance)
-
 }
 
 interface CustomerItemClicked {

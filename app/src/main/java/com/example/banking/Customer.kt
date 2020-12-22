@@ -1,19 +1,11 @@
 package com.example.banking
 
-class Customer {
-   private var id:Int = 0
-   private var balance:Int = 0
-   private val firstname: String
-   private val lastname: String
-   private val email: String
-
-   constructor(idd: Int,fname: String, lname: String,e: String,b:Int) {
-      firstname = fname
-      lastname = lname
-      id = idd
-      balance = b
-      email = e
-   }
+class Customer(idd: Int, fname: String, lname: String, e: String, b: Int) {
+   private var id:Int = idd
+   private var balance:Int = b
+   private val firstname: String = fname
+   private val lastname: String = lname
+   private val email: String = e
 
    fun getId(): Int {
       return id
@@ -40,6 +32,6 @@ class Customer {
    }
 
    fun getFullName(): String {
-      return firstname+ " " + lastname
+      return "$firstname $lastname"
    }
 }
