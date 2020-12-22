@@ -32,6 +32,6 @@ class Customer(idd: Int, fname: String, lname: String, e: String, b: Int) {
    }
 
    fun getFullName(): String {
-      return firstname+ " " + lastname
+      return "$firstname $lastname"
    }
 }
