@@ -77,11 +77,10 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
         builder.setPositiveButton("Transfer From") { _, _ ->
             //Lambda function
             // Toast.makeText(applicationContext, "clicked yes", Toast.LENGTH_SHORT).show()
-            if (firstperson == -1) {
-                firstperson = customer.getId()
-
+            firstperson = if (firstperson == -1) {
+                customer.getId()
             } else {
-                firstperson = -1
+                -1
             }
             updateLayout()
         }
