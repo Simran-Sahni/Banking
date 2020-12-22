@@ -74,7 +74,7 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
         builder.create()
 
         //performing positive action
-        builder.setPositiveButton("Transfer From") { dialogInterface, which ->
+        builder.setPositiveButton("Transfer From") { _, _ ->
             //Lambda function
             // Toast.makeText(applicationContext, "clicked yes", Toast.LENGTH_SHORT).show()
             if (firstperson == -1) {
@@ -87,11 +87,11 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
         }
 
         //performing cancel action
-        builder.setNeutralButton("Cancel") { dialogInterface, which ->
+        builder.setNeutralButton("Cancel") { _, _ ->
             Toast.makeText(applicationContext, "clicked cancel", Toast.LENGTH_SHORT).show()
         }
         //performing negative action
-        builder.setNegativeButton("Transfer To") { dialogInterface, which ->
+        builder.setNegativeButton("Transfer To") { _, _ ->
             //Toast.makeText(applicationContext,"clicked No",Toast.LENGTH_LONG).show()
             if (firstperson != -1 && secondperson == -1) {
 
@@ -153,7 +153,7 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
             val customDialog = builder.create()
 
             //performing positive action
-            builder.setPositiveButton("Approve", DialogInterface.OnClickListener { dialog, which ->
+            builder.setPositiveButton("Approve", DialogInterface.OnClickListener { _, _ ->
                 run {
 
                     val amt: Int = etamt.text.toString().toInt()
@@ -186,7 +186,7 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
             })
 
             //performing negative action
-            builder.setNegativeButton("Cancel") { dialogInterface, which ->
+            builder.setNegativeButton("Cancel") { _, _ ->
                 //Toast.makeText(applicationContext,"clicked No",Toast.LENGTH_LONG).show()
                 firstperson = -1
                 secondperson = -1
