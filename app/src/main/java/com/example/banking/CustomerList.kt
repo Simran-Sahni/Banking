@@ -197,8 +197,8 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
     }
 
     private fun transferMoney(firstperson: Int, secondperson: Int, amt: Int) {
-        var c1: Customer = mapp[firstperson]!!
-        var c2: Customer = mapp[secondperson]!!
+        val c1: Customer = mapp[firstperson]!!
+        val c2: Customer = mapp[secondperson]!!
         c1.setBalance(-amt)
         c2.setBalance(+amt)
         //Toast.makeText(applicationContext,c1.getBalance().toString(), Toast.LENGTH_LONG).show()
@@ -206,7 +206,7 @@ class CustomerList : AppCompatActivity(), CustomerItemClicked {
         helper.updateBalance(c1)
         helper.updateBalance(c2)
         //construct new arraylist from mappp and update adapter
-        var tmplist = ArrayList<Customer>()
+        val tmplist = ArrayList<Customer>()
         for (i in mapp.values) {
             tmplist.add(i)
         }
